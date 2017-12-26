@@ -7,6 +7,7 @@ rock_data_dir: /data
 rocknsm_dir: /opt/rocknsm
 rock_data_user: root
 rock_data_group: root
+#Rewrite the line below: The problem with this code is that it erroneously detects virbr0 as an interface. It should be written so that it better guesses viable interfaces
 rock_monifs: "{{ ansible_interfaces | difference(['lo', ansible_default_ipv4.interface | default('lo') ])| list }}"
 rock_hostname: "{{ inventory_hostname_short }}"
 rock_fqdn: "{{ inventory_hostname }}"
